@@ -1,0 +1,207 @@
+﻿Product Requirements Document (PRD)
+Tic-Tac-Toe Web Game (Five-Round Version)
+________________
+
+
+1. Overview
+This project is a one-page interactive web application that allows users to play a five-round series of tic-tac-toe games against themselves (local two-player). The interface features a soft green background, a centered gray game container, a red game timer at the top, and a classic 3×3 tic-tac-toe grid in the middle. The game displays win/lose/draw messages for each round and automatically resets once five rounds have been completed.
+The site is built using HTML, CSS, and JavaScript only, with no external dependencies.
+________________
+
+
+2. Features
+2.1 Core Gameplay
+* 3×3 tic-tac-toe board.
+
+* Red “X” and blue “O”.
+
+* Players alternate turns.
+
+* Automatic detection of:
+
+   * Win (three matching symbols in a row, column, or diagonal)
+
+   * Draw (“NO WINNERS”)
+
+2.2 Five-Round Game Structure
+      * Game consists of five rounds.
+
+      * After each round:
+
+         * Board resets.
+
+         * Message displays:
+
+            * “WE HAVE A WINNER – X”
+
+            * “WE HAVE A WINNER – O”
+
+            * “NO WINNERS”
+
+               * After all five rounds:
+
+                  * Final results message appears.
+
+                  * Option to restart the entire set.
+
+2.3 Timer
+                     * Red timer displayed centered at the top of the screen.
+
+                     * Timer resets at the start of each round.
+
+                     * Continues counting until the round ends.
+
+2.4 Layout & UI
+                        * Full page background is soft green.
+
+                        * Centered gray box contains:
+
+                           * Timer (top)
+
+                           * Game board (center)
+
+                           * Status text (below)
+
+                              * Visual contrast between symbols:
+
+                                 * “X” = red
+
+                                 * “O” = blue
+
+________________
+
+
+3. Technical Requirements
+3.1 Technologies
+                                    * HTML5 for structure.
+
+                                    * CSS3 for layout, colors, and styles.
+
+                                    * Vanilla JavaScript (ES6) for:
+
+                                       * Game logic
+
+                                       * Round tracking
+
+                                       * Timer logic
+
+                                       * DOM updates
+
+3.2 Game Logic Requirements
+                                          * Maintain a 3×3 board array for state tracking.
+
+                                          * Detect valid winning combinations:
+
+                                             * Rows: [0,1,2], [3,4,5], [6,7,8]
+
+                                             * Columns: [0,3,6], [1,4,7], [2,5,8]
+
+                                             * Diagonals: [0,4,8], [2,4,6]
+
+                                                * Store round results:
+
+                                                   * Winner (“X” or “O”) or draw.
+
+                                                      * Reset board and timer after each round.
+
+3.3 Timer Requirements
+                                                         * Displays elapsed time in seconds.
+
+                                                         * Updates every 1 second.
+
+                                                         * Resets to 0 at the start of each new round.
+
+                                                         * Stops when the round ends.
+
+3.4 UI Interaction Requirements
+                                                            * Tiles cannot be overwritten once selected.
+
+                                                            * After round resolution:
+
+                                                               * Board becomes temporarily locked until reset.
+
+                                                                  * Final modal or banner appears once five rounds are completed.
+
+________________
+
+
+4. User Stories
+As a player, I want to:
+                                                                     1. See a visually clean and centered tic-tac-toe board so I can focus on the game.
+
+                                                                     2. Click on empty squares to place X or O so I can play normally.
+
+                                                                     3. See a clear distinction between X (red) and O (blue) so symbols are easy to read.
+
+                                                                     4. View a timer running at the top of the screen so I can track the length of each round.
+
+                                                                     5. Complete five rounds of play so I can compare overall results.
+
+                                                                     6. See a message at the end of each round indicating whether there was a winner or no winner.
+
+                                                                     7. Have the board reset automatically after each round.
+
+                                                                     8. See a final message after round 5 indicating the set results.
+
+                                                                     9. Restart the game after the full five-round series to play again.
+
+________________
+
+
+5. Design Specifications
+5.1 Layout
+                                                                        * Full-screen container with soft green background (#c8e6c9 or similar).
+
+                                                                        * Centered gray game box approximately 60–70% width on desktop, responsive on mobile.
+
+                                                                        * Vertical layout inside gray box:
+
+                                                                           1. Red timer text
+
+                                                                           2. Tic-tac-toe board
+
+                                                                           3. Round result text
+
+5.2 Game Board
+                                                                              * 3×3 grid using either CSS Grid or flexbox.
+
+                                                                              * Each cell:
+
+                                                                                 * Square aspect ratio.
+
+                                                                                 * White or light background.
+
+                                                                                 * Border lines (2–3px, dark gray).
+
+                                                                                 * Hover effect optional.
+
+5.3 Typography
+                                                                                    * Timer: bold, red (#ff0000).
+
+                                                                                    * Game messages: bold, black or dark gray.
+
+                                                                                    * Symbols:
+
+                                                                                       * X: red (#ff0000)
+
+                                                                                       * O: blue (#0000ff)
+
+                                                                                          * Font: clean sans-serif (e.g., Arial, Roboto).
+
+5.4 Color Palette
+                                                                                             * Background: Soft green
+
+                                                                                             * Game Container: Gray
+
+                                                                                             * Board Cells: White / light gray
+
+                                                                                             * X Color: Red
+
+                                                                                             * O Color: Blue
+
+                                                                                             * Timer: Red
+
+5.5 Responsiveness
+                                                                                                * Board scales down smoothly for mobile screens.
+
+                                                                                                * Timer and messages remain centered and clearly visible.

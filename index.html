@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe Five-Round</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background">
+        <div class="game-container" style="position:relative;">
+            <canvas id="confetti-canvas" style="position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;z-index:1;"></canvas>
+            <div id="mode-select-container" style="margin-bottom:10px">
+              <label for="mode-select"><b>Mode:</b> </label>
+              <select id="mode-select">
+                <option value="pvp">Player vs Player</option>
+                <option value="pvc">Player vs Computer</option>
+              </select>
+            </div>
+            <div id="difficulty-select-container" style="margin-bottom:10px; display:none">
+              <label for="difficulty-select"><b>Difficulty:</b> </label>
+              <select id="difficulty-select">
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+              </select>
+            </div>
+            <div id="round-timer" class="timer">00</div>
+            <div id="tic-tac-toe-board" class="board"></div>
+            <div id="status" class="status"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
