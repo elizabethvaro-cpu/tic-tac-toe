@@ -72,6 +72,14 @@ body, html {
     min-height: 2.4em;
     text-align: center;
 }
+.ad-container {
+    margin-top: 16px;
+    padding: 6px;
+    border: 2px solid #333;
+    border-radius: 8px;
+    background: #fff;
+    display: inline-block;
+}
 @media (max-width: 600px) {
     .game-container { width: 96vw; min-width: unset; }
     .board { font-size: 1.3rem; }
